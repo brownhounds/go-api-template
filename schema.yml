@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Go Api Template
+  description: Go Api Template
+  version: 0.1.0
+
+paths:
+  /v1/test:
+    get:
+      summary: Test Endpoint
+      parameters:
+        - in: query
+          name: test
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ok"
+
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: uuid
+
+  schemas:
+    error:
+      type: object
+      required:
+        - status
+        - message
+      properties:
+        status:
+          type: integer
+          example: 400
+        message:
+          type: string
+
+  responses:
+    Forbidden:
+      description: Access Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"

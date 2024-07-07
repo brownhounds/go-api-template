@@ -1,0 +1,5 @@
+bin
+.env
+.certs
+.swagger/schema.json
+.swagger/index.html
