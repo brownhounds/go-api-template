@@ -2,7 +2,11 @@ module go-api-template
 
 go 1.22.2
 
-require github.com/brownhounds/swift v0.0.0-20240708170424-6405f9949a82
+require (
+	github.com/brownhounds/swift v0.0.0-20240708203851-ca7fbb96fd67
+	github.com/jmoiron/sqlx v1.4.0
+	github.com/lib/pq v1.10.9
+)
 
 require (
 	github.com/bahlo/generic-list-go v0.2.0 // indirect

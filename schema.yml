@@ -53,6 +53,32 @@ paths:
         500:
           $ref: "#/components/responses/InternalServerError"
 
+  /v1/dogs:
+    get:
+      summary: Test Endpoint For Dog Resource
+      responses:
+        200:
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Id:
+                    $ref: "#/components/schemas/uuid"
+                  Name:
+                    type: string
+                    example: "Bela"
+                  UpdatedAt:
+                    type: string
+                    format: date
+                  CreatedAt:
+                    type: string
+                    format: date
+
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
 components:
   securitySchemes:
     bearerAuth:

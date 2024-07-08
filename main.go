@@ -1,8 +1,9 @@
 package main
 
 import (
-	"go-api-template/config"
-	"go-api-template/routes"
+	"go-api-template/src/clients"
+	"go-api-template/src/config"
+	"go-api-template/src/routes"
 	"os"
 
 	"github.com/brownhounds/swift"
@@ -14,6 +15,10 @@ func main() {
 
 	app := swift.New()
 	app.OApiValidator("schema.yml")
+
+	app.OnBoot(func() {
+		clients.PostgresInit()
+	})
 
 	app.SwaggerStaticServer(".swagger", "/docs")
 	app.SwaggerServe(true)

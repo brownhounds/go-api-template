@@ -11,9 +11,6 @@ linters-settings:
       - opinionated
       - performance
       - style
-  govet:
-    enable:
-      - fieldalignment
   nolintlint:
     require-explanation: true
     require-specific: true

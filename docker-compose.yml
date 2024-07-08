@@ -31,6 +31,8 @@ services:
       context: .
     env_file:
       - ./.env
+    environment:
+      - SQL_HOST=postgres
     depends_on:
       migrator:
         condition: service_completed_successfully
