@@ -25,3 +25,14 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
+  api:
+    build:
+      context: .
+    env_file:
+      - ./.env
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
+    ports:
+      - 8080:8080

@@ -2,6 +2,10 @@ run:
 	@./scripts/build-docs.sh
 	@go run main.go
 
+run_compose:
+	@./scripts/build-docs.sh
+	docker compose up
+
 build:
 	@GOOS=linux go build -ldflags="-s -w" -o ./bin/api main.go
 
