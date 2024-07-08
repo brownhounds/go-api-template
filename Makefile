@@ -19,3 +19,6 @@ install-hooks:
 
 docs:
 	@./scripts/build-docs.sh
+
+dev_db:
+	@env $(cat .env) docker compose up -d postgres
