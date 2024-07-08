@@ -10,4 +10,5 @@ import (
 func ExampleRouter(app *swift.Swift) {
 	v1 := app.Group("/v1")
 	v1.Get("/test", handlers.ExampleHandler).Middleware(middlewares.ExampleMiddleware)
+	v1.Get("/test/{id}", handlers.ExampleHandlerWithId)
 }

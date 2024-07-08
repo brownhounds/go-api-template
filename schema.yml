@@ -29,6 +29,29 @@ paths:
         500:
           $ref: "#/components/responses/InternalServerError"
 
+  /v1/test/{id}:
+    get:
+      summary: Test Endpoint With Route Param
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            $ref: "#/components/schemas/uuid"
+      responses:
+        200:
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    $ref: "#/components/schemas/uuid"
+
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
 components:
   securitySchemes:
     bearerAuth:
@@ -48,6 +71,11 @@ components:
           example: 400
         message:
           type: string
+
+    uuid:
+      type: string
+      format: uuid
+      example: "2f358541-2bba-4c25-b187-52de3039179f"
 
   responses:
     Forbidden:
