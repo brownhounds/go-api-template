@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go-api-template/config"
 	"go-api-template/routes"
 	"os"
 
@@ -9,9 +10,7 @@ import (
 )
 
 func main() {
-	env.InitWithMandatoryVariables([]string{
-		"PORT",
-	})
+	env.InitWithMandatoryVariables(config.MandatoryEnvVariables)
 
 	app := swift.New()
 	app.OApiValidator("schema.yml")
@@ -22,5 +21,5 @@ func main() {
 	routes.ExampleRouter(app)
 
 	app.AddTLS(".certs/server.pem", ".certs/server-key.pem")
-	app.Serve("0.0.0.0", os.Getenv("PORT"))
+	app.Serve(os.Getenv(config.SERVER_HOST), os.Getenv(config.SERVER_PORT))
 }
