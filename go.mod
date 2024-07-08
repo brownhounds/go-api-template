@@ -2,7 +2,7 @@ module go-api-template
 
 go 1.22.2
 
-require github.com/brownhounds/swift v0.0.0-20240708150809-847dc2e49fc0
+require github.com/brownhounds/swift v0.0.0-20240708170424-6405f9949a82
 
 require (
 	github.com/bahlo/generic-list-go v0.2.0 // indirect
