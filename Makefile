@@ -28,4 +28,4 @@ dev_db:
 	@env $(cat .env) docker compose up -d postgres
 
 install_migrator:
-	@sh -c "$$(curl -fsSL https://raw.githubusercontent.com/brownhounds/migoro/v0.1.0/tools/install.sh)"
+	@sh -c "$$(curl -fsSL https://raw.githubusercontent.com/brownhounds/migoro/0.1.0/tools/install-linux-amd64.sh)"

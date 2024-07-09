@@ -4,6 +4,10 @@ github.com/bahlo/generic-list-go v0.2.0 h1:5sz/EEAK+ls5wF+NeqDpk5+iNdMDXrh3z3nPn
 github.com/bahlo/generic-list-go v0.2.0/go.mod h1:2KvAjgMlE5NNynlg/5iLrrCCZ2+5xWbdbCW3pNTGyYg=
 github.com/brownhounds/swift v0.0.0-20240709143828-f89b57946d12 h1:Lfrz/++t0PBf0ULeKzcCEC2qX2FYvQKBU/X3FVr/SG8=
 github.com/brownhounds/swift v0.0.0-20240709143828-f89b57946d12/go.mod h1:kQ1xc+BoJ3szZ+o4Uh6lG+x2O06XGjiZkz2W+kTmC6A=
+github.com/brownhounds/swift v0.0.0-20240709180456-6de29b8f3bd1 h1:0gpzTEQnd2ejdfhUb8FTYrvBC1td4AT7UWyUzqjWenw=
+github.com/brownhounds/swift v0.0.0-20240709180456-6de29b8f3bd1/go.mod h1:kQ1xc+BoJ3szZ+o4Uh6lG+x2O06XGjiZkz2W+kTmC6A=
+github.com/brownhounds/swift v0.1.0 h1:XLwKLCTjbXRZwG+zA9n6u2PBuz6Nikjg2oEAuSEDVUE=
+github.com/brownhounds/swift v0.1.0/go.mod h1:kQ1xc+BoJ3szZ+o4Uh6lG+x2O06XGjiZkz2W+kTmC6A=
 github.com/buger/jsonparser v1.1.1 h1:2PnMjfWD7wBILjqQbt530v576A/cAbQvEW9gGIpYMUs=
 github.com/buger/jsonparser v1.1.1/go.mod h1:6RYKKt7H4d4+iWqouImQ9R2FZql3VbhNgx27UK13J/0=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=

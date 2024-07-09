@@ -3,7 +3,7 @@ module go-api-template
 go 1.22.2
 
 require (
-	github.com/brownhounds/swift v0.0.0-20240709143828-f89b57946d12
+	github.com/brownhounds/swift v0.1.0
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/lib/pq v1.10.9
 )
