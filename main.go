@@ -4,7 +4,6 @@ import (
 	"go-api-template/src/clients"
 	"go-api-template/src/config"
 	"go-api-template/src/routes"
-	"os"
 
 	"github.com/brownhounds/swift"
 	"github.com/brownhounds/swift/env"
@@ -26,5 +25,5 @@ func main() {
 	routes.ExampleRouter(app)
 
 	app.AddTLS(".certs/server.pem", ".certs/server-key.pem")
-	app.Serve(os.Getenv(config.SERVER_HOST), os.Getenv(config.SERVER_PORT))
+	app.Serve(env.Env(config.SERVER_HOST), env.Env(config.SERVER_PORT))
 }

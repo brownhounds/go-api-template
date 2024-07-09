@@ -1,10 +1,5 @@
 package config
 
-import (
-	"os"
-	"strconv"
-)
-
 const (
 	SERVER_HOST                         = "SERVER_HOST"
 	SERVER_PORT                         = "SERVER_PORT"
@@ -31,12 +26,4 @@ var MandatoryEnvVariables = []string{
 	POSTGRES_POOL_MAX_IDLE_CONNS,
 	POSTGRES_POOL_MAX_IDLE_TIME_SECONDS,
 	POSTGRES_POOL_MAX_OPEN_CONNS,
-}
-
-func EnvInt(v string) int {
-	val, err := strconv.Atoi(os.Getenv(v))
-	if err != nil {
-		panic(err)
-	}
-	return val
 }

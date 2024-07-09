@@ -3,9 +3,9 @@ package clients
 import (
 	"fmt"
 	c "go-api-template/src/config"
-	"os"
 	"time"
 
+	"github.com/brownhounds/swift/env"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 )
@@ -22,12 +22,12 @@ func PostgresInit() {
 		DB: nil,
 		connection: fmt.Sprintf(
 			"user=%s password=%s dbname=%s host=%s sslmode=%s search_path=%s",
-			os.Getenv(c.SQL_USER),
-			os.Getenv(c.SQL_PASSWORD),
-			os.Getenv(c.SQL_DB),
-			os.Getenv(c.SQL_HOST),
-			os.Getenv(c.SQL_SSL),
-			os.Getenv(c.SQL_DB_SCHEMA),
+			env.Env(c.SQL_USER),
+			env.Env(c.SQL_PASSWORD),
+			env.Env(c.SQL_DB),
+			env.Env(c.SQL_HOST),
+			env.Env(c.SQL_SSL),
+			env.Env(c.SQL_DB_SCHEMA),
 		),
 	}
 
@@ -39,13 +39,13 @@ func PostgresInit() {
 	Postgres.DB = db
 
 	Postgres.DB.SetMaxIdleConns(
-		c.EnvInt(c.POSTGRES_POOL_MAX_IDLE_CONNS),
+		env.EnvInt(c.POSTGRES_POOL_MAX_IDLE_CONNS),
 	)
 	Postgres.DB.SetConnMaxIdleTime(
-		time.Duration(c.EnvInt(c.POSTGRES_POOL_MAX_IDLE_TIME_SECONDS)) * time.Second,
+		env.EnvTimeDuration(c.POSTGRES_POOL_MAX_IDLE_TIME_SECONDS) * time.Second,
 	)
 	Postgres.DB.SetMaxOpenConns(
-		c.EnvInt(c.POSTGRES_POOL_MAX_OPEN_CONNS),
+		env.EnvInt(c.POSTGRES_POOL_MAX_OPEN_CONNS),
 	)
 }
 
