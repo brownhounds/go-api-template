@@ -11,3 +11,15 @@ Requirements:
 - yq - https://github.com/mikefarah/yq
 - Migoro - https://github.com/brownhounds/migoro
 - make
+
+### Working with local packages
+
+```bash
+go mod edit -replace=github.com/username/swift=/home/brownhounds/dev/local-package
+```
+
+Alternatively add section in `go.mod` file:
+
+```
+replace github.com/username/swift => /home/brownhounds/dev/local-package
+```

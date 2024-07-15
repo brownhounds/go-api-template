@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	res "github.com/brownhounds/swift/response"
+	"github.com/brownhounds/swift/res"
 )
 
 type Dog struct {

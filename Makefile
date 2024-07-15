@@ -2,7 +2,7 @@ run:
 	@./scripts/build-docs.sh
 	@go run main.go
 
-run_compose:
+run-compose:
 	@./scripts/build-docs.sh
 	docker compose up
 
@@ -24,8 +24,8 @@ install-hooks:
 docs:
 	@./scripts/build-docs.sh
 
-dev_db:
+dev-db:
 	@env $(cat .env) docker compose up -d postgres
 
-install_migrator:
-	@sh -c "$$(curl -fsSL https://raw.githubusercontent.com/brownhounds/migoro/0.1.0/tools/install-linux-amd64.sh)"
+install-migrator:
+	@sh -c "$$(curl -fsSL https://raw.githubusercontent.com/brownhounds/migoro/v0.1.3/tools/install-linux-amd64.sh)"
